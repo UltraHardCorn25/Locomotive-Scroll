@@ -539,16 +539,6 @@ const scroll = new (0, _locomotiveScrollDefault.default)({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true
 });
-let path = document.querySelector("path");
-let pathLength = path.getTotalLength();
-path.style.strokeDasharray = pathLength + " " + pathLength;
-path.style.strokeDashoffset = pathLength;
-window.addEventListener("scroll", ()=>{
-    console.log("aa");
-    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-    var drawLength = pathLength * scrollPercentage;
-    path.style.strokeDashoffset = pathLength - drawLength;
-});
 
 },{"locomotive-scroll":"iDXE3","@parcel/transformer-js/src/esmodule-helpers.js":"liiLQ"}],"iDXE3":[function(require,module,exports) {
 /* locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
